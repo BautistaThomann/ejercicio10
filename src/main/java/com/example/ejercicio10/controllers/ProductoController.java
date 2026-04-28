@@ -7,11 +7,7 @@ import com.example.ejercicio10.models.Producto;
 import com.example.ejercicio10.repository.IProductoRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import java.util.List;
-
 import org.springframework.web.bind.annotation.GetMapping;
-
 
 @RestController
 @RequestMapping("/productos")
@@ -29,8 +25,7 @@ public class ProductoController {
     }
 
     @GetMapping
-    public List<Producto> listaProductos() {
+    public Iterable<Producto> listaProductos() {
         return productoRepository.findAll();
     }
-    
 }
